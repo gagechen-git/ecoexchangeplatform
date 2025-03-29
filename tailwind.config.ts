@@ -63,11 +63,11 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Custom eco theme colors updated to navy blue theme
+				// Custom eco theme colors updated to bright blue theme
 				eco: {
-					dark: '#1A237E', // Primary navy blue (was blue)
-					light: '#E8EAF6', // Light navy background (was light blue)
-					mid: '#3949AB', // Medium navy blue (was medium blue)
+					dark: '#2196F3', // Primary bright blue (was navy blue)
+					light: '#E3F2FD', // Light blue background 
+					mid: '#64B5F6', // Medium blue
 					text: '#666666', // Keep the same gray for text
 					title: '#333333' // Keep the same dark gray for titles
 				}
