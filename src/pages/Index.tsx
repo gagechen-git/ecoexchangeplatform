@@ -5,9 +5,18 @@ import FeaturesSection from "@/components/home/FeaturesSection";
 import AnnouncementsSection from "@/components/home/AnnouncementsSection";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ExternalLink } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
 
 const Index = () => {
+  // Generate 50 advertisement slots with different colors
+  const adSlots = Array.from({ length: 50 }, (_, index) => ({
+    id: index + 1,
+    title: `广告位 ${index + 1}`,
+    color: index % 5 === 0 ? 'bg-blue-100' : 
+           index % 5 === 1 ? 'bg-green-100' : 
+           index % 5 === 2 ? 'bg-yellow-100' : 
+           index % 5 === 3 ? 'bg-red-100' : 'bg-purple-100'
+  }));
+
   return (
     <Layout>
       <div className="max-w-6xl mx-auto">
@@ -66,6 +75,34 @@ const Index = () => {
         <div className="my-10 h-px bg-gray-200"></div>
         
         <FeaturesSection />
+
+        {/* Advertisement Slots Section */}
+        <section className="my-10">
+          <div className="flex items-center justify-between mb-6">
+            <h2 className="text-2xl font-bold text-eco-dark">广告专区</h2>
+            <Button variant="outline" className="text-eco-dark border-eco-dark hover:bg-eco-light">
+              查看全部 <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
+          </div>
+          
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+            {adSlots.map((slot) => (
+              <div 
+                key={slot.id} 
+                className={`${slot.color} border border-gray-200 rounded-lg p-4 h-32 flex flex-col justify-between transition-all duration-300 hover:shadow-md hover:scale-105`}
+              >
+                <div className="w-full flex justify-between items-start">
+                  <span className="text-xs font-semibold text-gray-500">广告</span>
+                  <span className="text-xs bg-white/60 px-2 py-1 rounded-full">{slot.id}</span>
+                </div>
+                <div className="text-center">
+                  <h3 className="font-medium text-eco-dark">{slot.title}</h3>
+                  <p className="text-xs text-gray-500 mt-1">点击查看详情</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
       </div>
     </Layout>
   );
