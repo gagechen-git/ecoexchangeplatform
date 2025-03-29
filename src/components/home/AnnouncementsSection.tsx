@@ -1,7 +1,8 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
-import { Calendar, FileText } from "lucide-react";
+import { Calendar, FileText, Megaphone } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const companyAnnouncements = [
   {
@@ -45,23 +46,17 @@ const tradingAnnouncements = [
   },
 ];
 
-const AnnouncementCard = ({ announcement, type }) => (
-  <div className="border-b border-gray-200 pb-4 last:border-b-0 last:pb-0">
-    <div className="flex items-start">
-      <div className="flex-shrink-0 mr-3 mt-1">
-        {type === "company" ? (
-          <FileText size={20} className="text-eco-dark" />
-        ) : (
-          <Calendar size={20} className="text-eco-dark" />
-        )}
-      </div>
-      <div>
-        <h4 className="font-bold text-eco-dark hover:text-eco-mid transition-colors">
-          <Link to={`/announcements/${announcement.id}`}>{announcement.title}</Link>
-        </h4>
-        <p className="text-xs text-gray-500 mb-1">{announcement.date}</p>
-        <p className="text-sm text-eco-text">{announcement.description}</p>
-      </div>
+const AnnouncementItem = ({ announcement, icon }) => (
+  <div className="flex items-start space-x-3 p-3 hover:bg-eco-light rounded-md transition-colors">
+    <div className="flex-shrink-0 mt-1 text-eco-dark">
+      {icon}
+    </div>
+    <div>
+      <h4 className="font-bold text-eco-dark hover:text-eco-mid transition-colors">
+        <Link to={`/announcements/${announcement.id}`}>{announcement.title}</Link>
+      </h4>
+      <p className="text-xs text-gray-500 mb-1">{announcement.date}</p>
+      <p className="text-sm text-eco-text">{announcement.description}</p>
     </div>
   </div>
 );
@@ -69,48 +64,53 @@ const AnnouncementCard = ({ announcement, type }) => (
 const AnnouncementsSection = () => {
   return (
     <section className="py-8">
-      <h2 className="text-center text-2xl font-bold text-eco-dark mb-10">最新公告</h2>
+      <div className="flex items-center justify-center mb-8">
+        <Megaphone className="text-eco-dark mr-2" size={24} />
+        <h2 className="text-center text-2xl font-bold text-eco-dark">最新公告</h2>
+      </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {/* Company Announcements */}
-        <div className="bg-white rounded-lg shadow-md p-6">
-          <div className="flex justify-between items-center mb-6">
-            <h3 className="text-xl font-bold text-eco-dark">公司公告</h3>
-            <Link to="/announcements" className="text-sm text-eco-dark hover:text-eco-mid">
-              查看全部 &raquo;
-            </Link>
-          </div>
-          
-          <div className="space-y-4">
+        <Card>
+          <CardHeader className="pb-3">
+            <CardTitle className="flex items-center">
+              <FileText size={20} className="text-eco-dark mr-2" />
+              <span>公司公告</span>
+              <Link to="/announcements" className="text-sm ml-auto text-eco-dark hover:text-eco-mid">
+                查看全部 &raquo;
+              </Link>
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-2">
             {companyAnnouncements.map((announcement) => (
-              <AnnouncementCard 
-                key={announcement.id} 
-                announcement={announcement} 
-                type="company" 
+              <AnnouncementItem
+                key={announcement.id}
+                announcement={announcement}
+                icon={<FileText size={18} />}
               />
             ))}
-          </div>
-        </div>
+          </CardContent>
+        </Card>
         
-        {/* Trading Announcements */}
-        <div className="bg-white rounded-lg shadow-md p-6">
-          <div className="flex justify-between items-center mb-6">
-            <h3 className="text-xl font-bold text-eco-dark">交易公告</h3>
-            <Link to="/announcements" className="text-sm text-eco-dark hover:text-eco-mid">
-              查看全部 &raquo;
-            </Link>
-          </div>
-          
-          <div className="space-y-4">
+        <Card>
+          <CardHeader className="pb-3">
+            <CardTitle className="flex items-center">
+              <Calendar size={20} className="text-eco-dark mr-2" />
+              <span>交易公告</span>
+              <Link to="/announcements" className="text-sm ml-auto text-eco-dark hover:text-eco-mid">
+                查看全部 &raquo;
+              </Link>
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-2">
             {tradingAnnouncements.map((announcement) => (
-              <AnnouncementCard 
-                key={announcement.id} 
-                announcement={announcement} 
-                type="trading" 
+              <AnnouncementItem
+                key={announcement.id}
+                announcement={announcement}
+                icon={<Calendar size={18} />}
               />
             ))}
-          </div>
-        </div>
+          </CardContent>
+        </Card>
       </div>
     </section>
   );
