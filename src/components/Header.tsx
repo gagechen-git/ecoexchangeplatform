@@ -1,7 +1,7 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
-import { Menu, X, Leaf, Wind } from "lucide-react";
+import { Menu, X, Leaf, Wind, Cpu, CircuitBoard, Server, Database, Code, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Header = () => {
@@ -13,27 +13,64 @@ const Header = () => {
 
   return (
     <header className="w-full">
-      {/* Top Banner with environmental background elements */}
+      {/* Top Banner with tech-environmental background elements */}
       <div className="eco-gradient py-8 px-4 text-center relative overflow-hidden">
-        {/* Environmental background elements */}
+        {/* Tech-environmental background elements */}
         <div className="absolute top-0 left-0 w-full h-full opacity-10">
-          <div className="absolute top-5 left-5 transform -rotate-12">
-            <Leaf className="w-16 h-16 text-white" />
+          {/* Tech icons */}
+          <div className="absolute top-5 left-10 transform -rotate-12">
+            <Cpu className="w-16 h-16 text-white" />
           </div>
-          <div className="absolute top-1/4 right-10 transform rotate-12">
-            <Leaf className="w-14 h-14 text-white" />
+          <div className="absolute top-1/4 right-12 transform rotate-12">
+            <CircuitBoard className="w-20 h-20 text-white" />
           </div>
           <div className="absolute bottom-5 left-1/4 transform rotate-45">
-            <Leaf className="w-10 h-10 text-white" />
+            <Server className="w-14 h-14 text-white" />
           </div>
           <div className="absolute top-1/3 left-1/2 transform -rotate-12">
-            <Wind className="w-20 h-20 text-white" />
+            <Database className="w-16 h-16 text-white" />
           </div>
           <div className="absolute bottom-10 right-1/4 transform -rotate-12">
-            <Wind className="w-16 h-16 text-white" />
+            <Code className="w-12 h-12 text-white" />
           </div>
-          <div className="hidden md:block absolute -top-20 -right-20 w-80 h-80 rounded-full bg-eco-light opacity-10"></div>
-          <div className="hidden md:block absolute -bottom-40 -left-20 w-80 h-80 rounded-full bg-eco-light opacity-10"></div>
+          <div className="absolute top-12 right-1/3 transform rotate-45">
+            <Zap className="w-10 h-10 text-white" />
+          </div>
+          
+          {/* Environmental elements for balance */}
+          <div className="absolute bottom-16 left-16 transform rotate-12">
+            <Leaf className="w-14 h-14 text-white" />
+          </div>
+          <div className="absolute top-3/4 right-20 transform -rotate-12">
+            <Wind className="w-18 h-18 text-white" />
+          </div>
+          
+          {/* Digital circuit pattern background */}
+          <div className="absolute inset-0 opacity-5">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+              <pattern id="circuit-pattern" width="100" height="100" patternUnits="userSpaceOnUse">
+                <path d="M10 10L50 10L50 50L90 50" stroke="white" strokeWidth="1" fill="none" />
+                <path d="M10 50L30 50L30 90" stroke="white" strokeWidth="1" fill="none" />
+                <path d="M50 50L50 90" stroke="white" strokeWidth="1" fill="none" />
+                <path d="M70 10L70 30L90 30" stroke="white" strokeWidth="1" fill="none" />
+                <circle cx="10" cy="10" r="2" fill="white" />
+                <circle cx="50" cy="10" r="2" fill="white" />
+                <circle cx="10" cy="50" r="2" fill="white" />
+                <circle cx="50" cy="50" r="2" fill="white" />
+                <circle cx="90" cy="50" r="2" fill="white" />
+                <circle cx="70" cy="10" r="2" fill="white" />
+                <circle cx="90" cy="30" r="2" fill="white" />
+                <circle cx="30" cy="90" r="2" fill="white" />
+                <circle cx="50" cy="90" r="2" fill="white" />
+              </pattern>
+              <rect width="100%" height="100%" fill="url(#circuit-pattern)" />
+            </svg>
+          </div>
+          
+          {/* Glowing orbs and light effects */}
+          <div className="hidden md:block absolute -top-20 -right-20 w-80 h-80 rounded-full bg-blue-400 opacity-10 blur-3xl"></div>
+          <div className="hidden md:block absolute -bottom-40 -left-20 w-80 h-80 rounded-full bg-blue-300 opacity-10 blur-3xl"></div>
+          <div className="hidden md:block absolute top-1/3 right-1/3 w-40 h-40 rounded-full bg-cyan-300 opacity-10 blur-2xl"></div>
         </div>
         
         {/* Content */}
