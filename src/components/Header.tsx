@@ -18,14 +18,16 @@ const Header = () => {
         <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">
           固体废物综合交易平台
         </h1>
-        <p className="text-white text-lg md:text-xl mb-6">
+        <p className="text-white text-lg md:text-xl mb-2">
           绿色交易，循环未来
         </p>
-        <Button 
-          className="bg-transparent border border-white text-white hover:bg-white hover:text-eco-dark transition-colors"
-        >
-          立即注册
-        </Button>
+        <Link to="/login">
+          <Button 
+            className="bg-transparent border border-white text-white hover:bg-white hover:text-eco-dark transition-colors"
+          >
+            登录/注册
+          </Button>
+        </Link>
       </div>
 
       {/* Navigation */}
