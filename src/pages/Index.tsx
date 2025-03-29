@@ -1,8 +1,8 @@
-
 import React from "react";
 import Layout from "@/components/Layout";
 import FeaturesSection from "@/components/home/FeaturesSection";
 import AnnouncementsSection from "@/components/home/AnnouncementsSection";
+import FriendlyLinksSection from "@/components/home/FriendlyLinksSection";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ExternalLink } from "lucide-react";
 
@@ -65,6 +65,10 @@ const Index = () => {
         <div className="my-10 h-px bg-gray-200"></div>
         
         <FeaturesSection />
+
+        <div className="my-10 h-px bg-gray-200"></div>
+        
+        <FriendlyLinksSection />
       </div>
     </Layout>
   );
