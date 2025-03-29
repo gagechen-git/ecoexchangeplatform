@@ -85,11 +85,42 @@ const Index = () => {
             </Button>
           </div>
           
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-            {adSlots.map((slot) => (
+          {/* First row: Featured ads (larger) */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+            {[0, 1, 2].map(index => (
+              <div 
+                key={`featured-${index}`}
+                className={`${adSlots[index].color} border border-gray-200 rounded-lg p-5 h-48 flex flex-col justify-between transition-all duration-300 hover:shadow-lg hover:scale-102 relative overflow-hidden`}
+              >
+                <div className="absolute top-0 right-0 bg-white/80 px-3 py-1 rounded-bl-lg text-xs font-semibold text-eco-dark">
+                  精选广告
+                </div>
+                
+                <div className="w-full flex justify-between items-start">
+                  <span className="text-sm font-semibold text-gray-600 bg-white/60 px-2 py-1 rounded-full">推荐</span>
+                  <span className="text-sm bg-white/60 px-3 py-1 rounded-full font-medium">{adSlots[index].id}</span>
+                </div>
+                
+                <div className="text-center my-auto">
+                  <h3 className="font-bold text-lg text-eco-dark">{adSlots[index].title}</h3>
+                  <p className="text-sm text-gray-600 mt-2">高质量企业环保设备展示</p>
+                </div>
+                
+                <div className="text-center mt-2">
+                  <Button variant="outline" size="sm" className="text-xs w-full bg-white/60 hover:bg-white border-gray-300">
+                    查看详情 <ArrowRight className="h-3 w-3 ml-1" />
+                  </Button>
+                </div>
+              </div>
+            ))}
+          </div>
+          
+          {/* Standard grid layout for remaining ads */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+            {adSlots.slice(3).map((slot) => (
               <div 
                 key={slot.id} 
-                className={`${slot.color} border border-gray-200 rounded-lg p-4 h-32 flex flex-col justify-between transition-all duration-300 hover:shadow-md hover:scale-105`}
+                className={`${slot.color} border border-gray-200 rounded-lg p-3 h-32 flex flex-col justify-between transition-all duration-300 hover:shadow-md hover:scale-105`}
               >
                 <div className="w-full flex justify-between items-start">
                   <span className="text-xs font-semibold text-gray-500">广告</span>
