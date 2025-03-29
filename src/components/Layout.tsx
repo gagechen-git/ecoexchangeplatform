@@ -5,9 +5,10 @@ import Footer from "./Footer";
 
 interface LayoutProps {
   children: React.ReactNode;
+  showSidebar?: boolean; // Make the showSidebar prop optional
 }
 
-const Layout: React.FC<LayoutProps> = ({ children }) => {
+const Layout: React.FC<LayoutProps> = ({ children, showSidebar = true }) => {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />

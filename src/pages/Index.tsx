@@ -16,11 +16,11 @@ const Index = () => {
           </div>
         </section>
 
-        <FeaturesSection />
+        <AnnouncementsSection />
         
         <div className="my-10 h-px bg-gray-200"></div>
         
-        <AnnouncementsSection />
+        <FeaturesSection />
       </div>
     </Layout>
   );
