@@ -37,8 +37,8 @@ const Header = () => {
             <Link to="/" className="menu-link font-medium">首页</Link>
             <Link to="/announcements" className="menu-link font-medium">公告</Link>
             <Link to="/trading" className="menu-link font-medium">交易服务</Link>
-            <Link to="/management" className="menu-link font-medium">管理办法</Link>
             <Link to="/data" className="menu-link font-medium">大数据</Link>
+            <Link to="/management" className="menu-link font-medium">管理办法</Link>
             <Link to="/cooperation" className="menu-link font-medium">生态合作</Link>
             <Link to="/about" className="menu-link font-medium">关于我们</Link>
           </div>
@@ -63,8 +63,8 @@ const Header = () => {
               <Link to="/" className="menu-link font-medium">首页</Link>
               <Link to="/announcements" className="menu-link font-medium">公告</Link>
               <Link to="/trading" className="menu-link font-medium">交易服务</Link>
-              <Link to="/management" className="menu-link font-medium">管理办法</Link>
               <Link to="/data" className="menu-link font-medium">大数据</Link>
+              <Link to="/management" className="menu-link font-medium">管理办法</Link>
               <Link to="/cooperation" className="menu-link font-medium">生态合作</Link>
               <Link to="/about" className="menu-link font-medium">关于我们</Link>
               <Link to="/login" className="menu-link font-medium">登录</Link>
