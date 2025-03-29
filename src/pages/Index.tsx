@@ -1,17 +1,38 @@
+
 import React from "react";
 import Layout from "@/components/Layout";
 import FeaturesSection from "@/components/home/FeaturesSection";
 import AnnouncementsSection from "@/components/home/AnnouncementsSection";
 import FriendlyLinksSection from "@/components/home/FriendlyLinksSection";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, ExternalLink } from "lucide-react";
+import { ArrowRight, ExternalLink, Leaf, Earth, TreeDeciduous } from "lucide-react";
 
 const Index = () => {
   return (
     <Layout>
       <div className="max-w-6xl mx-auto">
-        {/* Advertisement Banner */}
+        {/* Advertisement Banner with environmental background */}
         <section className="py-8 mb-10 bg-gradient-to-r from-eco-dark to-eco-mid rounded-lg overflow-hidden relative">
+          {/* Environmental background elements */}
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute top-5 left-10 opacity-20">
+              <Leaf className="w-12 h-12 text-white" />
+            </div>
+            <div className="absolute bottom-10 left-1/4 opacity-20">
+              <TreeDeciduous className="w-16 h-16 text-white" />
+            </div>
+            <div className="absolute top-1/3 right-10 opacity-20">
+              <Earth className="w-20 h-20 text-white" />
+            </div>
+            
+            {/* Wave patterns */}
+            <div className="absolute bottom-0 w-full">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" className="opacity-10">
+                <path fill="#ffffff" fillOpacity="1" d="M0,288L48,272C96,256,192,224,288,197.3C384,171,480,149,576,165.3C672,181,768,235,864,250.7C960,267,1056,245,1152,224C1248,203,1344,181,1392,170.7L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+              </svg>
+            </div>
+          </div>
+          
           <div className="container mx-auto px-4">
             <div className="flex flex-col md:flex-row items-center">
               <div className="md:w-1/2 text-center md:text-left mb-6 md:mb-0">
