@@ -14,7 +14,7 @@ const features = [
   {
     id: 2,
     icon: <RefreshCw size={42} className="text-eco-dark" />,
-    title: "大数据",
+    title: "数据服务",
     description: "实时监测市场行情，提供准确数据分析",
     link: "/data",
   },
@@ -35,7 +35,7 @@ const features = [
   {
     id: 5,
     icon: <Shield size={42} className="text-eco-dark" />,
-    title: "管理办法",
+    title: "平台规定",
     description: "完善的交易规则与管理制度，保障交易安全",
     link: "/management",
   },
@@ -56,9 +56,16 @@ const features = [
   {
     id: 8,
     icon: <FileText size={42} className="text-eco-dark" />,
-    title: "政策解读",
+    title: "通知公告",
     description: "及时更新行业政策，专业解读指导实践",
     link: "/announcements",
+  },
+  {
+    id: 9,
+    icon: <BarChart3 size={42} className="text-eco-dark" />,
+    title: "金融服务",
+    description: "提供融资担保、支付结算等金融支持服务",
+    link: "/finance",
   },
 ];
 
